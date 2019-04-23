@@ -18,10 +18,12 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
   #### move ngrok to /usr/local/bin:
       mv ngrok /usr/local/bin/ngrok
   #### ngrok Tunnel Authtoken:
-       visit and signup below then youcan get your Authtoken:
+   visit and signup below then youcan get your Authtoken:
+   
           https://dashboard.ngrok.com/user/signup
           
-       type your Authtoken in terminal:
+   type your Authtoken in terminal:
+   
           ./ngrok authtoken **************************************
           
 ## 2:Run the code for Free plan!
@@ -32,17 +34,18 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    go to: google account > security > Less secure app access > turn on
        
    #### run Gmail.py :
-        download Gmail.py and change lines below with sudo nanu Gmail.py :
+   download Gmail.py and change lines below with sudo nanu Gmail.py :
         gmail_user = 'gmailaccount@gmail.com'
         gmail_password = 'password'
         to = ['yourgmail@gmail.com']
         
    #### run ssh.py :
-        download ssh.py and run the python code
+   download ssh.py and run the python code
         
   ## 3:SSH to your system!
-     if everything works then gmail.py will sent an email to you to acces ssh
-     open terminal and type the ssh parameters from email:
+   if everything works then gmail.py will sent an email to you to acces ssh
+   open terminal and type the ssh parameters from email:
+   
         ssh username@0.tcp.ngrok.io -p <port>
  
         
