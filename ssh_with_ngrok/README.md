@@ -29,7 +29,7 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    if you have ngrok free plan then when you reboot your system the ssh ports will change so we are going to write a code to sent a gmail to our account when the port changes.
    
    #### turn on Less secure app access for gmail account:
-       go to: google account > security > Less secure app access > turn on
+   go to: google account > security > Less secure app access > turn on
        
    #### run Gmail.py :
         download Gmail.py and change lines below with sudo nanu Gmail.py :
