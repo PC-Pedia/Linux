@@ -12,19 +12,19 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
   open your terminal and type "sudo su" then type your password to access root
   
   #### download and unzip ngrok:
-      wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip 
-      unzip ngrok-stable-linux-arm.zip
+    wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip 
+    unzip ngrok-stable-linux-arm.zip
       
   #### move ngrok to /usr/local/bin:
-      mv ngrok /usr/local/bin/ngrok
+    mv ngrok /usr/local/bin/ngrok
   #### ngrok Tunnel Authtoken:
    visit and signup below then youcan get your Authtoken:
    
-          https://dashboard.ngrok.com/user/signup
+    https://dashboard.ngrok.com/user/signup
           
    type your Authtoken in terminal:
    
-          ./ngrok authtoken **************************************
+    ./ngrok authtoken **************************************
           
 ## 2:Run the code for Free plan!
    
@@ -36,70 +36,70 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    #### run gmail.py :
    download gmail.py:
    
-        https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/gmail.py
+    https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/gmail.py
    
    change lines below with sudo nanu gmail.py :
    
-        gmail_user = 'gmailaccount@gmail.com'
-        gmail_password = 'password'
-        to = ['yourgmail@gmail.com']
+    gmail_user = 'gmailaccount@gmail.com'
+    gmail_password = 'password'
+    to = ['yourgmail@gmail.com']
         
    #### run ssh.py :
    download ssh.py and run the python code
    
-        https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/ssh.py
+    https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/ssh.py
         
-        python ssh.py
+    python ssh.py
         
   ## 3:SSH to your system!
    if everything works then gmail.py will sent an email to you to access ssh
    open terminal and type the ssh parameters from email:
    
-        ssh username@0.tcp.ngrok.io -p <port>
+    ssh username@0.tcp.ngrok.io -p <port>
  
   ## 4:autostart the python codes:
 we want to autostart ssh.py file, open terminal and type:
   
-        sudo nano /lib/systemd/system/sship.service
+    sudo nano /lib/systemd/system/sship.service
         
 add lines below and change /home/path/ssh.py to your ssh.py directory:
   
-        [Unit]
-        Description=My Script Service
-        After=multi-user.target
+    [Unit]
+    Description=My Script Service
+    After=multi-user.target
 
-        [Service]
-        Type=idle
-        ExecStart=/usr/bin/python /home/path/ssh.py
+    [Service]
+    Type=idle
+    ExecStart=/usr/bin/python /home/path/ssh.py
 
-        [Install]
-        WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 save it with ctrl+x and exit
 
 and also for autostart gmail.py file create a service:
 
-        sudo nano /lib/systemd/system/gmail.service
+    sudo nano /lib/systemd/system/gmail.service
         
 add lines below and change /home/path/gmail.py to your gmail.py directory:
   
-        [Unit]
-        Description=My Script Service
-        After=multi-user.target
+    [Unit]
+    Description=My Script Service
+    After=multi-user.target
 
-        [Service]
-        Type=idle
-        ExecStart=/usr/bin/python /home/path/gmail.py
+    [Service]
+    Type=idle
+    ExecStart=/usr/bin/python /home/path/gmail.py
 
-        [Install]
-        WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
   save it with ctrl+x and exit
   
   now we want to enable services:
      
-     sudo systemctl daemon-reload
-     sudo systemctl enable sship.service
-     sudo systemctl enable gmail.service
-     sudo reboot
+    sudo systemctl daemon-reload
+    sudo systemctl enable sship.service
+    sudo systemctl enable gmail.service
+    sudo reboot
         
         
  **Now whenever you reboot your system the gmail.py will send you the new ip address for ssh login**
