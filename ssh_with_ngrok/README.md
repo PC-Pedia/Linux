@@ -36,7 +36,7 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    #### run gmail.py :
    download gmail.py:
    
-    https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/gmail.py
+    wget https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/gmail.py
    
    change lines below with sudo nanu gmail.py :
    
@@ -47,7 +47,7 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    #### run ssh.py :
    download ssh.py and run the python code
    
-    https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/ssh.py
+    wget https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/ssh.py
         
     python ssh.py
         
