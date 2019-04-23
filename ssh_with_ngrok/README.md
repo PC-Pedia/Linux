@@ -11,9 +11,9 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
   
   open your terminal and type "sudo su" then type your password to access root
   
-  download and unzip ngrok:\n
+  # download and unzip ngrok
       wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip 
       unzip ngrok-stable-linux-arm.zip
       
-  move ngrok to /usr/local/bin:
+  # move ngrok to /usr/local/bin:
       mv ngrok /usr/local/bin/ngrok
