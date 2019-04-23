@@ -17,3 +17,8 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
       
   #### move ngrok to /usr/local/bin:
       mv ngrok /usr/local/bin/ngrok
+  #### ngrok Tunnel Authtoken:
+       visit and signup below then youcan get your Authtoken:
+          https://dashboard.ngrok.com/user/signup
+       type your Authtoken in terminal:
+          ./ngrok authtoken **************************************
