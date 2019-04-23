@@ -33,7 +33,7 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    #### turn on Less secure app access for gmail account:
    go to: google account > security > Less secure app access > turn on
        
-   #### run Gmail.py :
+   #### run gmail.py :
    download gmail.py:
    
         https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/gmail.py
@@ -52,12 +52,12 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
         python ssh.py
         
   ## 3:SSH to your system!
-   if everything works then gmail.py will sent an email to you to acces ssh
+   if everything works then gmail.py will sent an email to you to access ssh
    open terminal and type the ssh parameters from email:
    
         ssh username@0.tcp.ngrok.io -p <port>
  
-  ## 4:autorun the python codes:
+  ## 4:autostart the python codes:
 we want to autostart ssh.py file, open terminal and type:
   
         sudo nano /lib/systemd/system/sship.service
@@ -97,9 +97,9 @@ add lines below and change /home/path/gmail.py to your gmail.py directory:
   now we want to enable services:
      
      sudo systemctl daemon-reload
-     sudo systemctl enable ssh.service
+     sudo systemctl enable sship.service
      sudo systemctl enable gmail.service
      sudo reboot
         
         
- **Now whenever you reboot your system the gmail.py will send you the new ip for ssh login**
+ **Now whenever you reboot your system the gmail.py will send you the new ip address for ssh login**
