@@ -34,13 +34,22 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    go to: google account > security > Less secure app access > turn on
        
    #### run Gmail.py :
-   download Gmail.py and change lines below with sudo nanu Gmail.py :
+   download gmail.py:
+   
+        https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/gmail.py
+   
+   change lines below with sudo nanu gmail.py :
+   
         gmail_user = 'gmailaccount@gmail.com'
         gmail_password = 'password'
         to = ['yourgmail@gmail.com']
         
    #### run ssh.py :
    download ssh.py and run the python code
+   
+        https://github.com/Farzin-Abdi/Linux/blob/master/ssh_with_ngrok/ssh.py
+        
+        python ssh.py
         
   ## 3:SSH to your system!
    if everything works then gmail.py will sent an email to you to acces ssh
@@ -48,5 +57,49 @@ if you want to access **ssh** anywhere without static IP or port forwarding foll
    
         ssh username@0.tcp.ngrok.io -p <port>
  
+  ## 4:autorun the python codes:
+we want to autostart ssh.py file, open terminal and type:
+  
+        sudo nano /lib/systemd/system/sship.service
         
- **Now whenever you reboot your system the Gmail.py will send you the new ip for ssh login**
+add lines below and change /home/path/ssh.py to your ssh.py directory:
+  
+        [Unit]
+        Description=My Script Service
+        After=multi-user.target
+
+        [Service]
+        Type=idle
+        ExecStart=/usr/bin/python /home/path/ssh.py
+
+        [Install]
+        WantedBy=multi-user.target
+save it with ctrl+x and exit
+
+and also for autostart gmail.py file create a service:
+
+        sudo nano /lib/systemd/system/gmail.service
+        
+add lines below and change /home/path/gmail.py to your gmail.py directory:
+  
+        [Unit]
+        Description=My Script Service
+        After=multi-user.target
+
+        [Service]
+        Type=idle
+        ExecStart=/usr/bin/python /home/path/gmail.py
+
+        [Install]
+        WantedBy=multi-user.target
+  save it with ctrl+x and exit
+  
+  now we want to enable services:
+     
+     sudo systemctl daemon-reload
+     sudo systemctl enable ssh.service
+     sudo systemctl enable gmail.service
+     sudo reboot
+        
+        
+ **Now whenever you reboot your system the gmail.py will send you the new ip for ssh login**
